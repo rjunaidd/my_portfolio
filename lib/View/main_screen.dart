@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/data/app_data.dart';
+import 'package:my_portfolio/widget/skillsContainer.dart';
+
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -38,12 +41,33 @@ class _MainScreenState extends State<MainScreen> {
              SizedBox(
                height: size.height * 0.03,
              ),
-            const Text("r_junaid6", style: TextStyle(
+             Text(AppData.modelData.name,
+               style:const TextStyle(
                fontSize: 24,
                fontWeight: FontWeight.bold,
                color: Colors.black,
                fontFamily: "Gloock"
-             ),)
+             ),
+            ),
+             SizedBox(
+               height: size.height * 0.03,
+             ),
+             Card(
+
+               color: Colors.grey.shade300,
+               child: Wrap(
+                 crossAxisAlignment: WrapCrossAlignment.center,
+                 alignment: WrapAlignment.center,
+                 spacing: size.width * 0.05,
+                 runSpacing: size.width * 0.05,
+                 children: List.generate(
+                     AppData.modelData.skillAndProgress.length,
+                         (index) =>SkillsContainer(
+                             SkillsTitle: AppData.modelData.skillAndProgress[index].name
+                         ),
+                 ),
+               ),
+             ),
            ],
          ),
      ),
