@@ -4,7 +4,7 @@ import 'package:my_portfolio/Models/mod_data.dart';
 class AppData{
   AppData._();
 
-  static ModelData appData = ModelData(
+  static ModelData modelData = ModelData(
       name: "r_junaid6",
       mail: "roafjunaid09@gmail.com",
       hobbies:<String> [
