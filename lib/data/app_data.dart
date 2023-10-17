@@ -23,7 +23,7 @@ class AppData{
             progress: 0.7),
         SkillAndProgress(
             name: "Mobile App Developer" ,
-            progress: 0.7),
+            progress: 0.6),
       ]
   );
 
