@@ -34,7 +34,7 @@ class ProgressBar extends StatelessWidget {
             width: size.width * 0.8,
             alignment: MainAxisAlignment.center,
             barRadius:const Radius.circular(30),
-            progressColor: Colors.grey,
+            progressColor: Colors.grey.shade500,
             percent: progresss,
           ),
         ],
