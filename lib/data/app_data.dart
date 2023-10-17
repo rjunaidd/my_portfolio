@@ -27,6 +27,6 @@ class AppData{
       ]
   );
 
-    static const String devBio = "Hello, I'm [Roaf Junaid] I'm a passionate Flutter developer with a knack for creating beautiful and functional mobile applications.";
+    static const String devBio = "Hello, I'm [Roaf Junaid] I'm a passionate Flutter developer with a knack for creating beautiful and functional mobile applications. My journey in the world of mobile app development began when I discovered the power of Flutter, and I've been hooked ever since. ";
 
 }
