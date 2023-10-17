@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/View/first_screen_view.dart';
+import 'package:my_portfolio/View/second_screen_view.dart';
 
 
 
@@ -23,6 +24,12 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   @override
+  void dispose(){
+    super.dispose();
+    pageController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
 
     Size size   = MediaQuery.of(context).size;
@@ -33,12 +40,11 @@ class _MainScreenState extends State<MainScreen> {
          width: size.width,
            height: size.height,
          child:PageView(
+           controller: pageController,
            scrollDirection: Axis.vertical,
            children: [
             const FirstScreenView(),
-             Container(
-               color: Colors.grey,
-             ),
+            const SecondScreenView(),
            ],
          ),
      ),
