@@ -4,7 +4,12 @@ import 'package:my_portfolio/widget/progress_bar.dart';
 import 'package:my_portfolio/widget/skillsContainer.dart';
 
 class FirstScreenView extends StatelessWidget {
-  const FirstScreenView({super.key});
+
+  final VoidCallback onNextPage;
+
+  const FirstScreenView({super.key,
+  required this.onNextPage});
+
 
   @override
   Widget build(BuildContext context) {
@@ -83,6 +88,16 @@ class FirstScreenView extends StatelessWidget {
             ),
           ),
         ),
+        Expanded(child: Container()),
+        IconButton(
+          onPressed:onNextPage ,
+          icon:const Icon(Icons.arrow_downward,
+            size: 30,),
+          color: Colors.black,
+        ),
+        SizedBox(
+          height: size.height * 0.01,
+        )
       ],
     );
   }
