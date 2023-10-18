@@ -5,7 +5,10 @@ import 'package:my_portfolio/widget/contact_screen.dart';
 
 
 class SecondScreenView extends StatelessWidget {
-  const SecondScreenView({super.key});
+  final VoidCallback onNextPage;
+
+  const SecondScreenView({super.key ,
+  required this.onNextPage});
 
 
   @override
@@ -149,6 +152,16 @@ class SecondScreenView extends StatelessWidget {
               ),
             ),
           ),
+          Expanded(child: Container()),
+          IconButton(
+            onPressed:onNextPage ,
+            icon:const Icon(Icons.arrow_upward,
+              size: 30,),
+            color: Colors.black,
+          ),
+          SizedBox(
+            height: size.height * 0.01,
+          )
         ],
       ),
     );

@@ -5,6 +5,7 @@ import 'package:my_portfolio/View/second_screen_view.dart';
 
 
 
+
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
@@ -15,6 +16,13 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
 
   late PageController pageController;
+
+  void onNextPage(int page){
+    pageController.animateToPage(page,
+        duration: const Duration(seconds: 1),
+        curve: Curves.easeIn
+    );
+  }
   @override
   void initState(){
     super.initState();
@@ -43,8 +51,8 @@ class _MainScreenState extends State<MainScreen> {
            controller: pageController,
            scrollDirection: Axis.vertical,
            children: [
-            const FirstScreenView(),
-            const SecondScreenView(),
+           FirstScreenView(onNextPage: ()=> onNextPage(1)),
+             SecondScreenView(onNextPage: () => onNextPage(0)),
            ],
          ),
      ),
